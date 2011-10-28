@@ -1,0 +1,149 @@
+@import "partials/shared";  
+@import "partials/header";           
+
+html {
+  background: image-url('body.png') repeat;      
+}       
+
+body 
+{
+  padding: 0px;
+  color: #656668;      
+  @include helveticaL;   
+  
+  p, ul, ol { line-height: 26px; }
+  
+  h1, h2, h3, h4, h5 {
+    color: $dark; 
+    font-family: "Avenir LT Std 35-Light", "AvenirLTStd35Light", "Avenir LT Std 35 Light", "Avenir LT Std 35Light", "AvenirLTStd-35Light", "Avenir LT Std", "Avenir35Light", "Avenir 35 Light", "Avenir 35Light", "Avenir-35Light", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+  }
+}   
+
+.wrapper {
+  width: 996px;
+  margin: 0px auto;
+}
+
+#footer-wrap 
+{
+  background: image-url('footer/footer-bg.png') repeat;
+  float: left;
+  width: 100%;
+  border: 1px solid #dedcdc;
+  border-left: none;
+  border-right: none;
+  padding-bottom: 25px;             
+  
+  #footer-shadow { margin: 0px auto; width: 935px; height: 18px; background: image-url('footer/footer-shadow.png') no-repeat; }   
+  
+  .block, .block-menu 
+  {
+    float: left;
+    color: #7b7a7a;
+    font-size: 10.5px;
+    letter-spacing: 1.2px;
+    line-height: 26px;
+    font-weight: 100;     
+    
+          a { color: #4f5d66; text-decoration: underline; font-size: 10.5px; }  
+    a:hover { text-decoration: none; }
+  }    
+  
+       .block h3 { color: #7b7a7a; font-size: 14px; margin-bottom: 0px; }
+      #dbd-block { width: 97px; margin-right: 152px; }
+     #club-block { width: 100px; margin-right: 152px; }
+  #support-block { width: 86px; margin-right: 152px; }
+  #contact
+  { 
+    width: 257px; 
+    float: right; 
+    
+    .contact-details a { text-decoration: none; }
+  }
+}            
+
+              #footer-line { float: left; width: 100%; }
+              #footer-line { height: 2px; background: image-url('footer/footer-line.png') repeat-x; margin: 25px 0px 10px 0px; }
+       #footer-copy, .copy { font-size: 11px }
+                     .copy { line-height: 14px; float: left; }
+              .link-to-top { float: right; }
+              
+.hideTxt {
+  text-indent: -9999px;
+}  
+
+a.hideTxt, span.hideTxt {
+  display: block;
+}  
+
+.clear {
+  @include clearfix;
+  clear: both;
+}     
+
+.grey_button, .button, .blue_button, .green_button { 
+  text-decoration: none;      
+  @include transition-property(all);
+  @include transition-duration(0.2s);
+  @include transition-timing-function(ease-in);     
+}
+.button:hover, .grey_button:hover, .blue_button { @include opacity(1); }
+
+.grey_button
+{     
+  $basecolor: $gray;
+  background-color: $basecolor;
+  @include button($basecolor);   
+  
+  &:hover {
+    @include button(darken($basecolor, 10%));  
+    background-color: darken($basecolor, 10%);    
+  }    
+}   
+
+.blue_button
+{     
+  $basecolor: $blue;
+  background-color: $basecolor;
+  @include button($basecolor);   
+  
+  &:hover {
+    @include button(darken($basecolor, 10%));  
+    background-color: darken($basecolor, 10%);    
+  }    
+}  
+
+.green_button
+{     
+  $basecolor: $green;
+  background-color: $basecolor;
+  @include button($basecolor);   
+  
+  &:hover {
+    @include button(darken($basecolor, 10%));  
+    background-color: darken($basecolor, 10%);    
+  }    
+}    
+ 
+ .page-title { color: $dark; font-size: 38px; line-height: 62px; margin-bottom: 0px; }
+.page-slogan { color: $lightDark; font-size: 14px; margin: -8px 0; }  
+
+#flash
+{
+  margin-top: 36px;
+  
+  .close {
+    text-indent: 0px;
+    width: auto;
+    height: auto; 
+    background-image: none; 
+    @include opacity(0.5);  
+    text-decoration: none;
+    text-shadow: none;
+    margin: -5px;
+  }
+  
+  .close:hover {
+    @include opacity(1.0);
+  }     
+}

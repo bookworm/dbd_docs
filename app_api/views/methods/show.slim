@@ -1,0 +1,37 @@
+doctype 5
+html lang="en" 
+  head
+    meta charset="UTF-8"
+    title
+     ==@project.title 
+     | &nbsp; \ &nbsp;  
+     - if @klass
+      ==klass.name
+      | &nbsp; \ &nbsp;  
+     ==@method.name
+    == stylesheet_link_tag :app
+  body.app
+    == partial "partials/header"  
+    .wrapper
+      #docs-menu== partial "blocks/menu"  
+      section#main   
+        aside.crumbs 
+          h3 docs for
+          .method
+            ==@project.title 
+            | &nbsp; \ &nbsp;  
+            - if @klass
+             ==@method.klass.name
+             | &nbsp; \ &nbsp;  
+            ==@method.name  
+        article#doc==@method.desc 
+        aside.details     
+          - if @method.has_parameters?()
+            .parameters== partial "method/parameters"  
+          .returns==@method.returns
+          - if @method.has_related?()
+            .related== partial "method/related" 
+        - unless @method.source.blank?
+        section.source
+          h3 Source
+          article#source==@method.source       

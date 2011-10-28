@@ -1,0 +1,6 @@
+-form_for('login', url(:sessions, :create), :class => 'form login-form', :remote => true) do |f|   
+  == f.label :email, :for => :email   
+  == f.text_field :email, :class => :text_field, :name => :email, :id => :email, :required => :required, :type => :email
+  == f.label :password, :for => :password
+  == f.text_field :password, :class => :text_area, :type => "password", :name => :password, :id => :password
+  == f.submit :login, :class => :button        

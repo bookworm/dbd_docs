@@ -1,0 +1,18 @@
+doctype 5
+html lang="en" 
+  head
+    meta charset="UTF-8"
+    title Design BreakDown Theme and Template club | Docs
+    == stylesheet_link_tag :app
+  body.app
+    == partial "partials/header"  
+    section#main    
+      .wrapper
+        #docs-menu   
+          ==partial "blocks/catsmenu"               
+        article#intro
+          h1 Welcome to the DBD Docs
+          markdown:
+            If your looking for the code docs checkout 
+            [http://api_docs.designbreakdown.com](http://api_docs.designbreakdown.com)
+        

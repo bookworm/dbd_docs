@@ -1,0 +1,12 @@
+doctype 5
+html lang="en" 
+  head
+    meta charset="UTF-8"
+    title== @project.title
+    == stylesheet_link_tag :app
+  body.app
+    == partial "partials/header"  
+    section#main    
+      .wrapper
+        #docs-menu== partial "blocks/menu"
+        article#doc== @project.desc

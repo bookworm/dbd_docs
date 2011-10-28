@@ -1,16 +1,16 @@
 require 'padrino/sprockets'
-class DbdDocs < Padrino::Application
+class DbdApiDocs < Padrino::Application
   register Padrino::Mailer
   register Padrino::Helpers
   
   # Authorizaition             
   register Padrino::Admin::AccessControl 
-  # register OmniAuthInitializer
+  # register OmniAuthInitializer  
   
   # Sessions                    
   set :sessions, false    
   set :session_id, 'dbd_club'
-  Padrino.use Rack::Session::Redis   
+  Padrino.use Rack::Session::Redis          
   
   # Resources. JS, CSS handling ext
   register CompassInitializer

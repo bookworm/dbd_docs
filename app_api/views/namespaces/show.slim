@@ -1,0 +1,15 @@
+doctype 5
+html lang="en" 
+  head
+    meta charset="UTF-8"
+    title #{@project.title} \ #{@namespace.title}
+    == stylesheet_link_tag :app
+  body.app
+    == partial "partials/header"  
+    .wrapper
+      #docs-menu== partial "blocks/menu"  
+      section#main   
+        aside.crumbs 
+          h3 docs for
+          .namespace== @namespace.name
+        article#doc== @namespace.desc       

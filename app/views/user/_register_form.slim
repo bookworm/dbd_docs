@@ -1,0 +1,6 @@
+-form_for(:account, url(:accounts, :create), :class => 'form register-form"') do |f|
+  == f.text_field :identifier, :class => :text_field, :title => "Email"
+  == f.text_field :password, :type => "password", :class => :text_area, :value => "Password"
+  == f.text_field :password_confirmation, :type => "password", :class => "#{:text_area}", :value => "Password Confirm"
+  == partial "other/hiddenfield"   
+  == f.submit 'Register', :class => :button         

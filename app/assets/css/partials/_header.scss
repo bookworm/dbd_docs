@@ -1,0 +1,73 @@
+header 
+{   
+  @include nested-reset;   
+  background: image-url('header.png') repeat-x;   
+  width: 100%;
+  min-height: 48px;
+  margin-bottom: -4px;
+  position: relative;
+  z-index: 100;     
+  
+  #logo {
+    width: 113px;
+    height: 33px;  
+    background: image-url('logo.png') repeat-x;   
+    @include opacity(0.8);  
+    margin-top: 6px;   
+    float: left;
+    
+    &:hover {
+      @include opacity(1.0);  
+    }
+  }  
+  
+  nav 
+  {   
+    margin: 0px auto; 
+    width: 550px;   
+    
+                 ul { margin-top: 12px; float: left; }
+             li { float: left; position: relative; z-index: 100; margin: 0px 25px 0px 0px;  }
+        li.last { margin-right: 0px }
+    li.active a, li:hover a { color: $light; } 
+    
+    a {       
+      padding: 7px 18px 7px 18px;
+      color: #222;
+      @include museo7();
+      text-decoration: none;  
+      font-size: 12px;                     
+      font-weight: bold;
+      &:hover { @include opacity(1); }
+    }         
+    
+    li.active a, a.active, a:hover {
+      height: 21px;
+      @include border-radius(120px);
+      background: $dark;  
+      z-index: 99;
+    }     
+  } 
+  
+  .sub-nav 
+  {
+    width: 166px;
+    margin-top: 12px;
+    position: absolute;
+    right: 25px;
+    
+    li 
+    {
+      float:left;    
+            a { color: #3b3b3b; font-size: 11px; }
+      a:hover { color: #0f0f0f }
+
+    }  
+    li.separator {
+      margin: 4px 8px 0px 8px;
+      background: image-url('subnav-sep.png') no-repeat;
+      width: 1px;
+      height: 12px;
+    }
+  }  
+}

@@ -1,0 +1,9 @@
+li.head       
+  h2= @cat.title   
+    - if @cat.has_cats?   
+      - @subcats = @cat.cats
+      == partial "blocks/subcatsmenu"   
+    - @cat.docs_titles.each |doc|
+      - @doc = doc
+      li
+        a href==url(:main, :show, :slug => @doc.slug)== @doc.title       

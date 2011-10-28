@@ -26,9 +26,13 @@
 # override these settings in the subapps as needed.
 #
 Padrino.configure_apps do
-  # enable :sessions
-  set :session_secret, '8a45e94e2b10e1f18132645a674151c2d59c9d515a972239c9fd509881106649'
+  set :asset_host, ENV['ASSET_HOST'] if Padrino.env == :production           
+  set :asset_uri_root, "/" 
+  set :stylesheets_path, 'css' 
+  set :javascripts_path, 'js'
 end
 
 # Mounts the core application for this project
-Padrino.mount("DbdDocs").to('/')
+Padrino.mount("DbdDocs").to('/')      
+Padrino.mount("DbdApiDocs",  :app_file => "#{Padrino.root}/app_api/app.rb").to("/apidocs") if Padrino.env == :development      
+Padrino.mount("DbdApiDocs",  :app_file => "#{Padrino.root}/app_api/app.rb").to("/").host("api_docs.designbreakdown.com") if Padrino.env == :production

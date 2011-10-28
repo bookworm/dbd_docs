@@ -1,0 +1,13 @@
+doctype 5
+html lang="en" 
+  head
+    meta charset="UTF-8"
+    title== @doc.title
+    == stylesheet_link_tag :app
+  body.app
+    == partial "partials/header"  
+    section#main    
+      .wrapper
+        #docs-menu   
+          ==partial "blocks/catsmenu"               
+        article#doc==@doc.body

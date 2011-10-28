@@ -1,0 +1,25 @@
+doctype 5
+html lang="en" 
+  head
+    meta charset="UTF-8"
+    title #{@project.title} \ #{@klass.name}
+    == stylesheet_link_tag :app
+  body.app
+    == partial "partials/header"  
+    .wrapper
+      #docs-menu== partial "blocks/menu"  
+      section#main   
+        aside.crumbs.meta    
+          .name
+            h3 docs for
+            .class= @klass.name
+          - if @klass.extends?()  
+             .extends== partial "klasses/extends"            
+          - if @klass.implements?()              
+            .implements== partial "klasses/implements"  
+        article#doc== @class.desc        
+        aside.details       
+          - if @klass.has_related?()
+            .related== partial "klasses/related"
+                
+            

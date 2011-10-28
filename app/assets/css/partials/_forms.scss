@@ -1,0 +1,213 @@
+@import "login/*.png";  
+@import "misc/*.png";      
+
+form label {
+  display: none;
+}       
+
+.select_label { display: block; }       
+
+body form .form-error
+{
+  padding: 14px;    
+  margin: 24px auto 0 auto;
+  position: absolute; 
+  z-index: 11000;
+  width: 100%;
+  
+  .close {
+    text-indent: 0px;
+    width: auto;
+    height: auto; 
+    background-image: none; 
+    @include opacity(0.5);  
+    text-decoration: none;
+    text-shadow: none;
+    margin: 4px 4px 0 0;
+    top: 0px;
+  }
+  
+  .close:hover {
+    @include opacity(1.0);
+  }
+}
+
+label.error {
+  height: 15px;
+  background-color: #FFFE36;
+  font-size: 11px;
+  border: 1px solid #E1E16D;
+  padding: 4px 4px 10px 4px;
+  color: black;
+  display: none;
+  @include border-radius(4px);
+  -moz-box-shadow: 0 0 6px #ddd;
+  -webkit-box-shadow: 0 0 6px #ddd;
+  z-index: 10000;  
+  position: relative;
+  float: right;        
+  top: -46px;
+  right: -80px; 
+  margin: 0 0 -100px 0 !important;
+}
+
+.close {
+  width: 48px;
+  height: 47px;         
+  @include misc-sprite(close-hover);
+  position: relative;
+  z-index: 20000;   
+  @include opacity(0.8);  
+  display: block;
+  text-indent: -9999px;
+}
+   
+ .close:hover { @include misc-sprite(close-default); @include opacity(1.0); }
+.close:active { @include misc-sprite(close-active); }   
+
+#login-popup 
+{
+  display: none;
+  position: absolute;     
+  z-index: 9999;
+  margin-top: -10px !important; 
+}     
+
+#login-popup, .login-block {
+  width: 397px;  
+  height: 378px;   
+}
+      
+.login-block
+{
+  @include login-sprite(login_bg);   
+  padding-top: 30px;  
+  height: 348px;   
+
+   
+  .close {
+    float: right;
+    margin: -30px -15px -20px 0px;
+    top: -28px;
+  }
+  
+         .login-inner { width: 276px; margin: 0 auto; }
+                   h4 { text-align: center; color: #464646; font-size: 17px; }
+  ul.signin-providers { margin: 18px auto; width: 150px; }  
+  .signin-providers-wrap { position: relative; }             
+    
+  .login-form-wrap, .register 
+  {
+    float: left;
+    margin-top: 22px;    
+    
+       h4 { margin-bottom: 15px }
+    input { margin-bottom: 12px }
+  }
+  
+  
+  .register { position: relative; }
+
+  .register 
+  {
+    color: #464646;
+    display: block;
+    font-size: 16px;
+    margin: 4px 0 0 0;
+    text-align: center;     
+  }    
+  
+  .register-link { margin-right: 4px; }
+  .bottom { 
+    font-size: 13px;  
+    a { text-decoration: none; } 
+  }
+  
+  input.button {
+    width: 63px;
+    height: 28px;
+    @include login-sprite(login-button-default);
+    border: medium none;
+    float: right;
+    margin: -38px 0 0;
+    padding: 2px 4px;
+    position: relative;      
+    color: $light;
+  }
+
+  input.button:hover {
+    @include login-sprite(login-button-hover);
+    box-shadow: 0 0 5px rgba(158, 158, 158, 1);
+    -webkit-box-shadow: 0 0 5px rgba(158, 158, 158, 1);
+    -moz-box-shadow: 0 0 5px rgba(158, 158, 158, 1);
+    box-shadow: 0 0 5px rgba(158, 158, 158, 1);
+    @include border-radius(9px);
+  }
+ 
+  input.button:active { @include login-sprite(login-button-active); }
+                .line { height: 1px; width: 100%; background: #eee; margin: 6px 0px 8px 0px; }
+          .reset-pass { text-align: center; display: block; }
+}    
+
+ul.signin-providers 
+{ 
+  li { float: left; }    
+  
+  li a { width: 30px; height: 30px; display: block; text-indent: -9999px; }
+  
+  li.google
+  {
+    margin-right: 18px;            
+    
+           a { @include login-sprite(google-icon-default); }
+     a:hover { @include login-sprite(google-icon-hover); }
+    a:active { @include login-sprite(google-icon-active); }
+  }   
+  li.twitter 
+  {
+    margin-right: 18px;       
+    
+           a { @include login-sprite(twitter-icon-default); }
+     a:hover { @include login-sprite(twitter-icon-hover); }
+    a:active { @include login-sprite(twitter-icon-active); }
+  }  
+  li.facebook 
+  {
+           a { @include login-sprite(facebook-icon-default); }
+     a:hover { @include login-sprite(facebook-icon-hover); }
+    a:active { @include login-sprite(facebook-icon-active); } 
+  }
+}    
+
+.login-block, .steps 
+{
+  
+  input.text_field, input.text_area, textarea { border: none; }     
+
+  input.text_field, input.text_area, textarea {
+    width: 276px;
+    height: 32px;
+    padding: 4px 4.5px 0px 4.5px;
+    color: #ddd; 
+    background: white;
+    border: 1px solid #A0A0A5;
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  input.text_field:focus, input.text_area:focus, textarea:focus {
+    outline: none;
+    color: #464646;  
+  }    
+  
+  input.invalid, input.error {
+    border-color: #A55;
+    background: #FEE;
+    color: #311;
+  }
+}        
+    
+  .reset-form { margin: 10px 0 10px 0 }
+.formResp.failure .message 
+            { margin-left: 0 }     
+            
+label { margin-bottom: 14px; float: left; color: $red; }

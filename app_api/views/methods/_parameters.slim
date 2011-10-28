@@ -1,0 +1,8 @@
+h3 Parameters   
+ul.parameters-list   
+- @method.parameters.each do |param|
+  li    
+    .meta
+      span.type== param.type   
+      span.name== param.name   
+    .desc== param.desc

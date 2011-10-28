@@ -15,11 +15,18 @@ gem 'mongo_mapper'
 gem 'bson_ext', :require => "mongo"  
 gem 'mm-versionable'      
 gem 'sprockets'
-gem 'padrino-sprockets', :git => 'git://github.com/bookworm/padrino-sprockets.git'
+gem 'padrino-sprockets', :git => 'git://github.com/bookworm/padrino-sprockets.git'     
+gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git'
+gem 'sinatra-flash', :git => "git://github.com/bookworm/sinatra-flash.git"  
+gem 'redis' 
+gem 'redis-namespace'
+gem 'resque' 
+gem 'redis-store', :git => "git://github.com/bookworm/redis-store.git", :branch => "1.0.x" 
+gem 'enki', :git => "git://github.com/bookworm/enki.git"
 
 # Test requirements
 gem 'shoulda', :group => "test"
 gem 'rack-test', :require => "rack/test", :group => "test"
 
 # Padrino
-gem 'padrino', :git => "git://github.com/padrino/padrino-framework.git"
+gem 'padrino', :git => "git://github.com/bookworm/padrino-framework.git"
