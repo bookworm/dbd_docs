@@ -9,7 +9,8 @@ html lang="en"
       ==klass.name
       | &nbsp; \ &nbsp;  
      ==@method.name
-    == stylesheet_link_tag :app
+    == stylesheet_link_tag :app  
+    == javascript_include_tag :app
   body.app
     == partial "partials/header"  
     .wrapper

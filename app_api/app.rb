@@ -25,7 +25,7 @@ class DbdApiDocs < Padrino::Application
     public_assets_folder '/'
     public_stylesheets_folder 'css'  
     public_javascripts_folder 'js'
-    append_path 'assets/js'     
+    append_path '../app/assets/js'     
     append_path '../lib/assets/js'
     append_path '../vendor/assets/js' 
   end
