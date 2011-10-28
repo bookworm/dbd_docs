@@ -1,0 +1,11 @@
+doctype 5
+html lang="en" 
+  head
+    meta charset="UTF-8"
+    title Design BreakDown Theme and Template club | I Break Stuff
+    == stylesheet_link_tag :login
+    == javascript_include_tag :app
+  body.index            
+    == partial "partials/header"          
+    section#main  
+      #login== partial "user/loginblock" 

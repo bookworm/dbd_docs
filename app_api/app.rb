@@ -16,6 +16,10 @@ class DbdApiDocs < Padrino::Application
   register CompassInitializer
   register Padrino::Sprockets
   register Sinatra::Flash
+ 
+  ##
+  # Assets
+  #
     
   assets do    
     digest false  
@@ -28,5 +32,18 @@ class DbdApiDocs < Padrino::Application
     append_path '../app/assets/js'     
     append_path '../lib/assets/js'
     append_path '../vendor/assets/js' 
+  end        
+  
+  ## 
+  # Access Rules
+  #                   
+  
+  access_control.roles_for :any do |role|
+    role.protect "/"
+    role.allow "/sessions"   
+  end 
+  
+  access_control.roles_for :registered, :admin do |role|
+    role.allow "/"
   end
 end

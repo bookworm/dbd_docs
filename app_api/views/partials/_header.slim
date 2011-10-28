@@ -1,0 +1,19 @@
+header
+  .wrapper
+    a#logo.hideTxt href=="http://#{ENV['DOMAIN']}" Design Breakdown Logo
+    nav
+      noscript Javascript required for site to function properly. Please enable it.
+      == menu_builder()
+    ul.sub-nav
+      li.dashboard
+        a href="http://account.designbreakdown.com" Dashboard
+      li.separator
+      - if !current_account
+        li.login
+          a href="/login" Login
+      - else
+        li.logout
+          a href="/logout" Logout    
+    .clear     
+    ==styled_flash 
+#login-popup.popup== partial "user/loginblock"

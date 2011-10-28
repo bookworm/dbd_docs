@@ -1,0 +1,4 @@
+-form_for('reset_pass', '/request_reset', :class => 'form', :id => "reset_form") do |f|
+  == f.text_field :identifier, :class => "#{:text_field} validate[required,custom[email]]", :title => "Email", :name => :identifier
+  == partial "other/hiddenfield"
+  ==f.submit 'Reset', :class => :button         

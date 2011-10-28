@@ -1,0 +1,10 @@
+@import "partials/shared";     
+@import "partials/header";  
+
+#login
+{      
+  margin: 0 auto;  
+  width: 397px;   
+  .login-block { background-image: none; }
+  .close { display: none; }
+}
