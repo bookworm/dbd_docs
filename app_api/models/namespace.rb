@@ -5,9 +5,6 @@ class Namespace < Codedoc
   plugin MongoMapper::Plugins::Timestamps
     
   # Keys
-  key :title, String       
-  key :name,  String
-  key :desc,  String
   key :doc,   String        
   
   # Key Settings   
