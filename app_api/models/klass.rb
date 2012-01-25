@@ -48,5 +48,13 @@ class Klass < Codedoc
     slug = self[self.class.slug_key].parameterize.to_s
     slug = self[:namespace].parameterize.to_s + '-' + slug unless self.namespace.blank?     
     self.slug = slug
+  end  
+  
+  ##
+  # Setters
+  #
+  
+  def namespace=(namespace)
+    
   end
 end
